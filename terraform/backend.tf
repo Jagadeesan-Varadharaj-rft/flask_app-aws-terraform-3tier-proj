@@ -3,8 +3,8 @@ terraform {
     bucket         = "tfstate-jvflaskwebapp-project"
     key            = "backend/flaskwebapp.tfstate"
     dynamodb_table = "remote-backend"
-    access_key     = "AKIA3KXHGOQ7XJCQLJHE"
-    secret_key     = "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"
+    access_key     = ""
+    secret_key     = ""
     region         = "us-east-1"
   }
 
