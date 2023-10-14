@@ -1,11 +1,13 @@
 terraform {
-  cloud {
-    organization = "Org101"
-
-    workspaces {
-      name = "terra-tier"
-    }
+  backend "s3" {
+    bucket         = "tfstate-jvflaskwebapp-project"
+    key            = "backend/flaskwebapp.tfstate"
+    dynamodb_table = "remote-backend"
+    access_key     = "AKIA3KXHGOQ7XJCQLJHE"
+    secret_key     = "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"
+    region         = "us-east-1"
   }
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -23,6 +25,6 @@ terraform {
 ###########################################################################################
 
 
-provider "aws" {
-  region = "us-east-1"
-}
+#provider "aws" {
+#  region = "us-east-1"
+#}
